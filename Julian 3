@@ -1,0 +1,21 @@
+src/com/julian/utils/DoubleUtils.java
+package com.julian.utils;
+
+/**
+ * DoubleUtils
+ * -----------
+ * Author: Julian
+ *
+ * Utility to compare two real numbers with a non-negative tolerance:
+ * returns true if |a - b| <= tolerance.
+ */
+public final class DoubleUtils {
+    private DoubleUtils() {}
+
+    public static boolean equalsWithTolerance(double a, double b, double tolerance) {
+        if (tolerance < 0) {
+            throw new IllegalArgumentException("tolerance must be non-negative");
+        }
+        return Math.abs(a - b) <= tolerance;
+    }
+}
