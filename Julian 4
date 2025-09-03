@@ -1,0 +1,25 @@
+src/com/julian/demos/DoubleEqualsDemo.java
+package com.julian.demos;
+
+import java.util.Scanner;
+import com.julian.utils.DoubleUtils;
+
+/**
+ * DoubleEqualsDemo
+ * ----------------
+ * Author: Julian
+ *
+ * Reads three real numbers: a, b, tol
+ * Prints "equals" if |a - b| <= tol, otherwise "not equals".
+ */
+public class DoubleEqualsDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        double tol = sc.nextDouble();
+        boolean eq = DoubleUtils.equalsWithTolerance(a, b, tol);
+        System.out.println(eq ? "equals" : "not equals");
+        sc.close();
+    }
+}
