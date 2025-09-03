@@ -1,0 +1,35 @@
+src/com/julian/utils/TilesCalculator.java
+package com.julian.utils;
+
+/**
+ * TilesCalculator
+ * ----------------
+ * Author: Julian
+ *
+ * Utility to compute the minimal number of X-by-X square tiles needed to cover
+ * an N-by-M rectangle, without splitting tiles and allowing overflow.
+ *
+ * This implementation uses ONLY integer arithmetic (no loops, no conditionals,
+ * no Math library calls) by applying the ceiling trick: ceil(a/b) = (a + b - 1) / b
+ * for positive integers.
+ *
+ * Constraints: tileSize > 0, n > 0, m > 0.
+ */
+public final class TilesCalculator {
+    private TilesCalculator() {}
+
+    /**
+     * Returns the minimal number of X-by-X tiles to cover an N-by-M rectangle.
+     *
+     * @param tileSize side of the square tile X (meters)
+     * @param n        rectangle side N (meters)
+     * @param m        rectangle side M (meters)
+     * @return minimal number of tiles required
+     */
+    public static int minSquareTiles(int tileSize, int n, int m) {
+        int tilesAlongN = (n + tileSize - 1) / tileSize;
+        int tilesAlongM = (m + tileSize - 1) / tileSize;
+        return tilesAlongN * tilesAlongM;
+    }
+}
+
