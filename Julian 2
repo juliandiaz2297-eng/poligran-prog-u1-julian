@@ -1,0 +1,28 @@
+src/com/julian/demos/TilesDemo.java
+package com.julian.demos;
+
+import java.util.Scanner;
+import com.julian.utils.TilesCalculator;
+
+/**
+ * TilesDemo
+ * ---------
+ * Author: Julian
+ *
+ * Demo program for TilesCalculator.
+ * Input: three positive integers X N M (in that order).
+ * Output: a single integer with the minimal number of tiles.
+ *
+ * Example (from the scenario): input "3 16 23" -> output "48".
+ */
+public class TilesDemo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int x = sc.nextInt();
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        int result = TilesCalculator.minSquareTiles(x, n, m);
+        System.out.println(result);
+        sc.close();
+    }
+}
